@@ -58,11 +58,12 @@ const options = {
 };
 
 const specs = swaggerJsdoc(options); // Analiza las opciones pasadas como parámetro y devuelve el objeto de especificación de Swagger convertido
+
+// Barra de busqueda
 app.use(
   "/api-docs",
-  // Proceso de configuración de Swagger UI
   swaggerUi.serve,
-  swaggerUi.setup(specs)
+  swaggerUi.setup(specs, { explorer: true })
 );
 
 // 5. Manejadores de errores
